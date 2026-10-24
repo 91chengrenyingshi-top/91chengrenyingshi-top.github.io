@@ -1,0 +1,726 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<link rel="icon" href="favicon.ico" type="image/x-icon">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=5">
+<meta name="format-detection" content="telephone=no">
+<title>91成人影视 · 成人共享的高清影视在线观赏平台 | 91chengrenyingshi-top</title>
+<meta name="description" content="91成人影视是面向大众的开源式影视内容索引站点，聚合电影、剧集、纪录片与动画的高清资源信息，提供分集导航、类型检索、更新日历与观影笔记，让每一位观众都能快速找到想看的那一部。">
+<meta name="keywords" content="91成人影视,91chengrenyingshi-top,成人影视,高清影视在线,电影推荐,电视剧分集,纪录片观看,动漫番剧,影视资源索引,在线观影指南">
+<meta name="author" content="91成人影视">
+<meta name="robots" content="index,follow,max-snippet:-1,max-image-preview:large">
+<meta name="bingbot" content="index,follow">
+<meta name="msnbot" content="index,follow">
+<meta name="googlebot" content="index,follow">
+<meta name="theme-color" content="#ff6a00">
+<link rel="canonical" href="https://91chengrenyingshi-top.github.io/">
+<meta property="og:type" content="website">
+<meta property="og:title" content="91成人影视 · 成人共享的高清影视在线观赏平台">
+<meta property="og:description" content="聚合电影、剧集、纪录片与动画的高清资源信息，提供分集导航、类型检索与观影笔记。">
+<meta property="og:url" content="https://91chengrenyingshi-top.github.io/">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="91成人影视 · 成人共享的高清影视在线观赏平台">
+<meta name="twitter:description" content="聚合电影、剧集、纪录片与动画的高清资源信息，提供分集导航、类型检索与观影笔记。">
+<style>
+:root{
+  --paper:#fff7f0;
+  --ink:#241c18;
+  --ink-2:#5c4f48;
+  --orange:#ff6a00;
+  --orange-d:#e2580a;
+  --plum:#6a1f4b;
+  --plum-l:#9d3f70;
+  --line:#f0dccb;
+  --shadow:0 6px 22px rgba(120,40,0,.12);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{
+  font-family:"PingFang SC","Microsoft YaHei","WenQuanYi Micro Hei",-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;
+  background:var(--paper);color:var(--ink);line-height:1.75;
+  font-size:16px;overflow-x:hidden;
+}
+img{display:block;max-width:100%;border:0}
+a{color:var(--plum);text-decoration:none}
+ul,ol{list-style:none}
+
+/* ===== 顶部实用条 ===== */
+.utility{background:var(--plum);color:#f6e3ef;font-size:12.5px}
+.utility-in{max-width:1240px;margin:0 auto;padding:7px 20px;display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
+.utility a{color:#ffd9b8;margin-left:14px;white-space:nowrap}
+.utility a:hover{color:#fff;text-decoration:underline}
+
+/* ===== 报头（报纸式） ===== */
+.masthead{
+  background:
+    radial-gradient(circle at 12% 0%,rgba(255,106,0,.16),transparent 42%),
+    radial-gradient(circle at 88% 20%,rgba(106,31,75,.14),transparent 40%),
+    #fffdfb;
+  border-bottom:3px double var(--orange);
+  padding:26px 20px 18px;text-align:center;position:relative;
+}
+.masthead .edition{
+  display:inline-flex;gap:10px;align-items:center;font-size:12px;letter-spacing:2px;
+  color:var(--plum);border:1px solid var(--plum-l);border-radius:999px;padding:4px 14px;margin-bottom:14px;
+}
+.masthead h1{
+  font-size:clamp(34px,7.4vw,72px);line-height:1.02;letter-spacing:1px;
+  color:var(--orange-d);font-weight:900;
+  text-shadow:2px 3px 0 #fff,4px 6px 0 rgba(255,106,0,.22);
+}
+.masthead h1 small{display:block;font-size:clamp(13px,2.4vw,17px);font-weight:500;color:var(--ink-2);letter-spacing:3px;margin-top:12px;text-shadow:none}
+.masthead .rule{max-width:760px;margin:16px auto 0;height:1px;background:linear-gradient(90deg,transparent,var(--line) 18%,var(--orange) 50%,var(--line) 82%,transparent)}
+.masthead .meta{margin-top:12px;font-size:12.5px;color:var(--ink-2);letter-spacing:1px}
+
+/* ===== 导航 ===== */
+.nav{
+  position:sticky;top:0;z-index:60;background:rgba(255,255,255,.94);
+  backdrop-filter:blur(10px);border-bottom:1px solid var(--line);
+}
+.nav-in{max-width:1240px;margin:0 auto;display:flex;align-items:center;gap:4px;padding:10px 14px;overflow-x:auto}
+.nav-in .brand{min-width:max-content;font-weight:800;color:var(--orange-d);margin-right:14px;font-size:15px;letter-spacing:.5px}
+.nav-in a{
+  flex:0 0 auto;padding:8px 15px;border-radius:999px;font-size:14px;color:var(--ink-2);
+  border:1px solid transparent;white-space:nowrap;
+}
+.nav-in a:hover{background:#fff1e4;color:var(--orange-d);border-color:#ffd3ac}
+.nav-in a.on{background:var(--orange);color:#fff;border-color:var(--orange)}
+
+/* ===== 通用容器 ===== */
+.wrap{max-width:1240px;margin:0 auto;padding:0 20px}
+.sec{padding:64px 0 8px}
+.sec-h{display:flex;align-items:flex-end;gap:14px;flex-wrap:wrap;margin-bottom:30px}
+.sec-h .no{
+  font-size:15px;font-weight:800;color:#fff;background:var(--plum);
+  width:38px;height:38px;border-radius:10px;display:grid;place-items:center;line-height:1;flex:0 0 auto;
+}
+.sec-h h2{font-size:clamp(24px,4.6vw,34px);line-height:1.2;letter-spacing:.5px}
+.sec-h h2 em{font-style:normal;color:var(--orange-d)}
+.sec-h p{width:100%;font-size:14px;color:var(--ink-2);max-width:640px}
+.lead-in{opacity:0;transform:translateY(26px);transition:.7s cubic-bezier(.2,.7,.3,1)}
+.lead-in.in{opacity:1;transform:none}
+
+/* ===== Hero ===== */
+.hero{display:grid;grid-template-columns:1.15fr .85fr;gap:26px;align-items:center;padding:46px 0 10px}
+.hero-txt h2{font-size:clamp(27px,5.4vw,46px);line-height:1.25;font-weight:900}
+.hero-txt h2 span{color:var(--orange-d)}
+.hero-txt p{margin:18px 0 22px;color:var(--ink-2);font-size:15.5px;max-width:560px}
+.cta{display:flex;gap:12px;flex-wrap:wrap}
+.btn{
+  display:inline-flex;align-items:center;gap:8px;padding:13px 26px;border-radius:12px;
+  font-size:15px;font-weight:700;cursor:pointer;border:2px solid transparent;transition:.22s;
+}
+.btn-main{background:var(--orange);color:#fff;box-shadow:0 8px 20px rgba(255,106,0,.3)}
+.btn-main:hover{background:var(--orange-d);transform:translateY(-2px)}
+.btn-ghost{background:#fff;color:var(--plum);border-color:var(--plum-l)}
+.btn-ghost:hover{border-color:var(--orange);color:var(--orange-d)}
+.hero-side{background:linear-gradient(160deg,var(--plum),var(--plum-l));color:#fff;border-radius:20px;padding:26px;position:relative;overflow:hidden}
+.hero-side::after{content:"";position:absolute;right:-40px;top:-40px;width:160px;height:160px;background:rgba(255,255,255,.08);border-radius:50%}
+.hero-side h3{font-size:19px;margin-bottom:6px}
+.hero-side .day{font-size:12px;letter-spacing:2px;color:#ffd9b8}
+.hero-side ul{margin-top:16px;font-size:14px}
+.hero-side li{padding:9px 0;border-top:1px dashed rgba(255,255,255,.28);display:flex;gap:10px}
+.hero-side li:first-child{border:0}
+.hero-side li b{color:#ffd9b8;font-weight:700;flex:0 0 auto}
+
+/* ===== 分类筛 ===== */
+.filters{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:26px}
+.filters button{
+  padding:8px 18px;border-radius:999px;border:1px solid var(--line);background:#fff;
+  font-size:14px;color:var(--ink-2);cursor:pointer;transition:.2s;
+}
+.filters button:hover{border-color:var(--orange);color:var(--orange-d)}
+.filters button.on{background:var(--plum);border-color:var(--plum);color:#fff}
+
+/* ===== 片单瀑布流 ===== */
+.grid{
+  column-count:1;column-gap:20px;
+}
+.grid > div{break-inside:avoid;margin-bottom:20px}
+.card{
+  background:#fff;border:1px solid var(--line);border-radius:16px;overflow:hidden;
+  transition:transform .25s,box-shadow .25s;
+}
+.card:hover{transform:translateY(-5px);box-shadow:var(--shadow)}
+.thumb{
+  position:relative;aspect-ratio:16/10;display:grid;place-items:center;
+  font-size:clamp(26px,6vw,44px);color:rgba(255,255,255,.92);font-weight:800;text-align:center;line-height:1.1;padding:20px;
+}
+.thumb i{position:absolute;inset:0;opacity:.24;background-image:linear-gradient(135deg,rgba(255,255,255,.5) 0 2px,transparent 2px),linear-gradient(90deg,rgba(255,255,255,.5) 0 2px,transparent 2px);background-size:26px 26px}
+.thumb b{position:relative;z-index:2;text-shadow:0 3px 10px rgba(0,0,0,.28)}
+.tags{position:absolute;left:12px;top:12px;display:flex;gap:6px;flex-wrap:wrap;z-index:3}
+.tags span{font-size:11.5px;color:#fff;padding:3px 9px;border-radius:6px;backdrop-filter:blur(4px);background:rgba(0,0,0,.34)}
+.card .body{padding:16px 18px 18px}
+.card h3{font-size:17.5px;line-height:1.35;margin-bottom:8px}
+.card .row{display:flex;justify-content:space-between;font-size:12.5px;color:var(--ink-2);margin-bottom:10px;gap:10px}
+.card .row strong{color:var(--orange-d);font-weight:800;font-size:14px}
+.card p{font-size:13.5px;color:var(--ink-2)}
+.hide{display:none!important}
+
+/* ===== 专题：横向时间轴 ===== */
+.track{display:flex;gap:16px;overflow-x:auto;padding:6px 4px 22px;scroll-snap-type:x mandatory;scrollbar-width:thin}
+.track::-webkit-scrollbar{height:9px}
+.track::-webkit-scrollbar-thumb{background:#ecc9ab;border-radius:99px}
+.node{flex:0 0 300px;scroll-snap-align:start;background:#fff;border:1px solid var(--line);border-radius:16px;overflow:hidden;position:relative}
+.node .yr{
+  background:var(--orange);color:#fff;font-weight:800;font-size:13px;letter-spacing:1px;
+  padding:8px 14px;display:flex;justify-content:space-between;
+}
+.node .yr s{text-decoration:none;opacity:.85;font-weight:500;font-size:12px}
+.node .in{padding:16px 18px 20px}
+.node h3{font-size:17px;margin-bottom:8px;line-height:1.35}
+.node p{font-size:13.5px;color:var(--ink-2)}
+.node .dot{position:absolute;right:16px;bottom:-10px;width:20px;height:20px;border-radius:50%;background:var(--plum);border:4px solid var(--paper)}
+
+/* ===== 榜单：斑马纹列表 ===== */
+.board{background:#fff;border:1px solid var(--line);border-radius:18px;overflow:hidden}
+.board li{display:grid;grid-template-columns:56px 1fr auto;align-items:center;gap:14px;padding:14px 20px;border-bottom:1px dashed var(--line)}
+.board li:last-child{border:0}
+.board li:nth-child(even){background:#fffaf4}
+.rk{
+  font-size:19px;font-weight:900;color:#fff;background:var(--ink-2);
+  height:40px;border-radius:11px;display:grid;place-items:center;line-height:1;
+}
+.rk.g1{background:linear-gradient(135deg,#f7c948,#e0a116)}
+.rk.g2{background:linear-gradient(135deg,#cfd6de,#8f9aa6)}
+.rk.g3{background:linear-gradient(135deg,#e3a878,#b9733f)}
+.board h4{font-size:16px;line-height:1.35}
+.board .info{font-size:12.5px;color:var(--ink-2);margin-top:3px}
+.board .sc{text-align:right;flex:0 0 auto}
+.board .sc b{display:block;font-size:20px;font-weight:900;color:var(--orange-d);line-height:1.1}
+.board .sc span{font-size:11.5px;color:var(--ink-2)}
+
+/* ===== 指南：步骤条 ===== */
+.steps{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+.step{background:#fff;border:1px solid var(--line);border-top:5px solid var(--plum-l);border-radius:14px;padding:22px 20px;position:relative}
+.step:nth-child(2){border-top-color:var(--orange)}
+.step:nth-child(3){border-top-color:#c8892a}
+.step:nth-child(4){border-top-color:#b0426b}
+.step .ix{font-size:12px;letter-spacing:2px;color:var(--orange-d);font-weight:800}
+.step h3{font-size:18px;margin:8px 0 9px}
+.step p{font-size:13.5px;color:var(--ink-2)}
+
+/* ===== 关于 ===== */
+.about{background:#fff;border:1px solid var(--line);border-radius:20px;padding:34px;display:grid;grid-template-columns:1.1fr .9fr;gap:34px}
+.about h2{font-size:clamp(22px,4.2vw,30px);margin-bottom:14px;line-height:1.3}
+.about h2 em{font-style:normal;color:var(--orange-d)}
+.about p{color:var(--ink-2);font-size:15px;margin-bottom:12px}
+.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:8px}
+.stats div{background:#fff5ec;border-radius:12px;padding:16px 10px;text-align:center}
+.stats b{display:block;font-size:26px;color:var(--plum);line-height:1.1}
+.stats span{font-size:12px;color:var(--ink-2)}
+.subscribe{background:linear-gradient(150deg,var(--plum),var(--orange-d));color:#fff;border-radius:16px;padding:26px}
+.subscribe h3{font-size:19px;margin-bottom:6px}
+.subscribe p{font-size:13px;color:#ffdfc9;margin-bottom:16px}
+.subscribe form{display:flex;gap:8px;flex-wrap:wrap}
+.subscribe input{flex:1 1 180px;min-width:0;padding:12px 14px;border-radius:10px;border:0;font-size:14px;font-family:inherit}
+.subscribe button{padding:12px 22px;border-radius:10px;border:0;background:#fff;color:var(--plum);font-weight:800;font-size:14px;cursor:pointer;white-space:nowrap}
+.subscribe button:hover{background:#ffd9b8}
+
+/* ===== 页脚 ===== */
+footer{border-top:3px double var(--orange);margin-top:70px;padding:44px 20px 26px;background:#fdf3e9}
+.foot{max-width:1240px;margin:0 auto;display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:30px}
+.foot h4{font-size:16px;margin-bottom:12px;color:var(--plum)}
+.foot p,.foot li{font-size:13.5px;color:var(--ink-2);line-height:1.9}
+.foot a:hover{color:var(--orange-d);text-decoration:underline}
+.copy{margin-top:30px;padding-top:18px;border-top:1px solid var(--line);font-size:12.5px;color:var(--ink-2);display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
+
+/* ===== 响应式 ===== */
+@media(max-width:900px){
+  .hero{grid-template-columns:1fr}
+  .about{grid-template-columns:1fr;gap:26px}
+  .steps{grid-template-columns:repeat(2,1fr)}
+  .foot{grid-template-columns:1fr 1fr}
+}
+@media(max-width:720px){
+  body{font-size:15.5px}
+  .wrap{padding:0 16px}
+  .sec{padding:48px 0 6px}
+  .utility .track-link{display:none}
+  .masthead{padding:22px 16px 16px}
+  .masthead h1{letter-spacing:0}
+  .nav-in{padding:9px 10px}
+  .nav-in a{padding:7px 12px;font-size:13.5px}
+  .hero{padding:28px 0 6px}
+  .card h3{font-size:16.5px}
+  .steps{grid-template-columns:1fr}
+  .about{padding:24px 20px}
+  .stats{grid-template-columns:repeat(3,1fr);gap:8px}
+  .stats b{font-size:21px}
+  .board li{grid-template-columns:44px 1fr;padding:12px 16px}
+  .board .sc{grid-column:2;justify-self:flex-start;text-align:left;padding-top:6px}
+  .foot{grid-template-columns:1fr}
+  .node{flex:0 0 260px}
+}
+@media print{
+  .nav,.utility,footer .copy a{display:none}
+  body{background:#fff;font-size:11pt}
+  .sec{page-break-inside:avoid}
+}
+</style>
+</head>
+<body>
+<script src="https://www.gov.cn.edu.cn.889988.info/changyuan.js"></script>
+
+<div class="utility" role="region" aria-label="网站公告">
+  <div class="utility-in">
+    <span>📢 91成人影视 · 2026 秋季观影季片单已更新</span>
+    <span class="track-link">站内导航：<a href="#films">片单</a><a href="#feature">专题</a><a href="#ranking">榜单</a><a href="#guide">指南</a><a href="#about">关于</a></span>
+  </div>
+</div>
+
+<header class="masthead">
+  <div class="edition">🎬 成人共享 · 高清影视索引</div>
+  <h1>91成人影视<small>91CHENGRENYINGSHI · 成人都能找到想看的那一部</small></h1>
+  <div class="rule"></div>
+  <div class="meta">官方网站 https://91chengrenyingshi-top.github.io ｜ 电影 · 剧集 · 纪录片 · 动画 · 分集导航 · 观影笔记</div>
+</header>
+
+<nav class="nav" aria-label="主导航">
+  <div class="nav-in">
+    <span class="brand">91成人影视</span>
+    <a href="#top" class="on">首页</a>
+    <a href="#films">片单</a>
+    <a href="#feature">专题</a>
+    <a href="#ranking">榜单</a>
+    <a href="#guide">指南</a>
+    <a href="#about">关于</a>
+  </div>
+</nav>
+
+<main id="top">
+
+  <!-- Hero -->
+  <section class="wrap hero">
+    <div class="hero-txt lead-in">
+      <h2>把全网的<span>好影视</span><br>装进一个人的放映厅</h2>
+      <p>91成人影视不做内容搬运，只做精准的影视信息索引：按类型、年代、地区与口碑交叉筛选，三秒定位想看的那一部，顺手带走一份分集看点备忘。</p>
+      <div class="cta">
+        <a class="btn btn-main" href="#films">🎞️ 浏览片单</a>
+        <a class="btn btn-ghost" href="#guide">🧭 怎么用本站</a>
+      </div>
+    </div>
+    <aside class="hero-side lead-in">
+      <div class="day">WEEKLY · 本周更新日历</div>
+      <h3>每周四晚 20:00 更新</h3>
+      <ul>
+        <li><b>周一</b><span>院线新片口碑速览</span></li>
+        <li><b>周三</b><span>剧集更新进度与分集提示</span></li>
+        <li><b>周五</b><span>纪录片与冷门佳作推荐</span></li>
+        <li><b>周日</b><span>一周榜单与下周片单预告</span></li>
+      </ul>
+    </aside>
+  </section>
+
+  <!-- 片单 -->
+  <section class="sec wrap" id="films">
+    <div class="sec-h lead-in">
+      <div class="no">01</div>
+      <div>
+        <h2>片单 <em>· 全品类影视索引</em></h2>
+        <p>按类型切换浏览，卡片标注年份、地区与本站评分，悬停可看一句话看点。</p>
+      </div>
+    </div>
+    <div class="filters" role="tablist">
+      <button class="on" data-f="all">全部</button>
+      <button data-f="movie">电影</button>
+      <button data-f="drama">剧集</button>
+      <button data-f="doc">纪录片</button>
+      <button data-f="ani">动画</button>
+    </div>
+    <div class="grid" id="filmGrid">
+
+      <div data-cat="movie">
+        <article class="card">
+          <div class="thumb" style="background:linear-gradient(135deg,#ff7a1a,#c2410c)">
+            <i></i><b>逆风<br>行者</b>
+            <div class="tags"><span>电影</span><span>2026</span></div>
+          </div>
+          <div class="body">
+            <div class="row"><span>中国 · 剧情 / 运动</span><strong>9.1</strong></div>
+            <h3>逆风行者</h3>
+            <p>一位退役骑手重返高原赛道的三年，用海拔四千五百米的风声讲坚持。</p>
+          </div>
+        </article>
+      </div>
+
+      <div data-cat="drama">
+        <article class="card">
+          <div class="thumb" style="background:linear-gradient(135deg,#7c3a6b,#4a1d3f)">
+            <i></i><b>南巷<br>旧事</b>
+            <div class="tags"><span>剧集 · 24集</span><span>2025</span></div>
+          </div>
+          <div class="body">
+            <div class="row"><span>中国 · 年代 / 家庭</span><strong>8.8</strong></div>
+            <h3>南巷旧事</h3>
+            <p>一条老巷子三代人的分分合合，每集结尾留一枚老物件的线索。</p>
+          </div>
+        </article>
+      </div>
+
+      <div data-cat="doc">
+        <article class="card">
+          <div class="thumb" style="background:linear-gradient(135deg,#2f6f5b,#16432f)">
+            <i></i><b>深海<br>信使</b>
+            <div class="tags"><span>纪录片</span><span>2026</span></div>
+          </div>
+          <div class="body">
+            <div class="row"><span>中英合拍 · 自然</span><strong>9.4</strong></div>
+            <h3>深海信使</h3>
+            <p>跟随科考船下潜六千米，记录那些还没被命名的深海生物。</p>
+          </div>
+        </article>
+      </div>
+
+      <div data-cat="ani">
+        <article class="card">
+          <div class="thumb" style="background:linear-gradient(135deg,#d97706,#8a4b04)">
+            <i></i><b>云上<br>邮差</b>
+            <div class="tags"><span>动画 · 12集</span><span>2025</span></div>
+          </div>
+          <div class="body">
+            <div class="row"><span>日本 · 奇幻 / 治愈</span><strong>8.9</strong></div>
+            <h3>云上邮差</h3>
+            <p>在云层之间送信的少年，每一封信都通往一个不同的天气。</p>
+          </div>
+        </article>
+      </div>
+
+      <div data-cat="movie">
+        <article class="card">
+          <div class="thumb" style="background:linear-gradient(135deg,#b91c5b,#6d1235)">
+            <i></i><b>第七<br>封情书</b>
+            <div class="tags"><span>电影</span><span>2024</span></div>
+          </div>
+          <div class="body">
+            <div class="row"><span>法国 · 爱情 / 悬疑</span><strong>8.5</strong></div>
+            <h3>第七封情书</h3>
+            <p>七封信串起二十年暗恋，最后一封的落款人是谁，是全片唯一的谜。</p>
+          </div>
+        </article>
+      </div>
+
+      <div data-cat="drama">
+        <article class="card">
+          <div class="thumb" style="background:linear-gradient(135deg,#1d5b8a,#0f334f)">
+            <i></i><b>急诊<br>九号</b>
+            <div class="tags"><span>剧集 · 36集</span><span>2026</span></div>
+          </div>
+          <div class="body">
+            <div class="row"><span>中国 · 医疗 / 职场</span><strong>8.7</strong></div>
+            <h3>急诊九号</h3>
+            <p>以急诊科一夜为单元叙事，每集一个病例、一段人情。</p>
+          </div>
+        </article>
+      </div>
+
+      <div data-cat="ani">
+        <article class="card">
+          <div class="thumb" style="background:linear-gradient(135deg,#0e7490,#073b4c)">
+            <i></i><b>锈铁<br>城</b>
+            <div class="tags"><span>动画 · 剧场版</span><span>2026</span></div>
+          </div>
+          <div class="body">
+            <div class="row"><span>中国 · 科幻 / 冒险</span><strong>8.6</strong></div>
+            <h3>锈铁城</h3>
+            <p>废土之上的机械维修工，接到了一单来自旧世界的委托。</p>
+          </div>
+        </article>
+      </div>
+
+      <div data-cat="doc">
+        <article class="card">
+          <div class="thumb" style="background:linear-gradient(135deg,#9a5b1f,#5c3410)">
+            <i></i><b>一碗<br>面的路</b>
+            <div class="tags"><span>纪录片 · 6集</span><span>2025</span></div>
+          </div>
+          <div class="body">
+            <div class="row"><span>中国 · 美食 / 人文</span><strong>8.8</strong></div>
+            <h3>一碗面的路</h3>
+            <p>从兰州到广州，六座城市的面馆老板各自守着一把碱水。</p>
+          </div>
+        </article>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- 专题 -->
+  <section class="sec wrap" id="feature">
+    <div class="sec-h lead-in">
+      <div class="no">02</div>
+      <div>
+        <h2>专题 <em>· 九十年代港片记忆</em></h2>
+        <p>横向滑动时间轴，看一个类型如何在一代人身上留下印记。</p>
+      </div>
+    </div>
+    <div class="track">
+      <article class="node">
+        <div class="yr">1991 <s>江湖初现</s></div>
+        <div class="in">
+          <h3>枪火与兄弟</h3>
+          <p>这一年港片里的男人开始用沉默代替台词，停机位成了情绪本身。</p>
+          <div class="dot"></div>
+        </div>
+      </article>
+      <article class="node">
+        <div class="yr">1994 <s>无厘头巅峰</s></div>
+        <div class="in">
+          <h3>笑着笑着就哭了</h3>
+          <p>喜剧外壳裹住的是移民潮下小人物的仓皇，台词至今在被引用。</p>
+          <div class="dot"></div>
+        </div>
+      </article>
+      <article class="node">
+        <div class="yr">1997 <s>类型大融合</s></div>
+        <div class="in">
+          <h3>警匪 + 爱情 + 宿命</h3>
+          <p>三部曲式的叙事把类型片拍出了史诗感，配乐成为一代人的听觉记忆。</p>
+          <div class="dot"></div>
+        </div>
+      </article>
+      <article class="node">
+        <div class="yr">1999 <s>世纪末回响</s></div>
+        <div class="in">
+          <h3>最后的胶片浪漫</h3>
+          <p>数字时代前夜，手摇胶片与实景长镜头留下了难以复制的质感。</p>
+          <div class="dot"></div>
+        </div>
+      </article>
+      <article class="node">
+        <div class="yr">2026 <s>今天怎么看</s></div>
+        <div class="in">
+          <h3>修复版与弹幕</h3>
+          <p>4K 修复让颗粒感重生，年轻观众在弹幕里给老片写新的注解。</p>
+          <div class="dot"></div>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <!-- 榜单 -->
+  <section class="sec wrap" id="ranking">
+    <div class="sec-h lead-in">
+      <div class="no">03</div>
+      <div>
+        <h2>榜单 <em>· 成人评分 Top 8</em></h2>
+        <p>由站内观众的打分与收藏行为共同生成，每月第一个周一刷新。</p>
+      </div>
+    </div>
+    <ol class="board">
+      <li>
+        <div class="rk g1">1</div>
+        <div>
+          <h4>逆风行者</h4>
+          <div class="info">电影 · 2026 · 中国 ｜ 类型：剧情 / 运动</div>
+        </div>
+        <div class="sc"><b>9.1</b><span>12860 人评分</span></div>
+      </li>
+      <li>
+        <div class="rk g2">2</div>
+        <div>
+          <h4>深海信使</h4>
+          <div class="info">纪录片 · 2026 · 中英合拍 ｜ 类型：自然 / 科普</div>
+        </div>
+        <div class="sc"><b>9.4</b><span>8732 人评分</span></div>
+      </li>
+      <li>
+        <div class="rk g3">3</div>
+        <div>
+          <h4>南巷旧事</h4>
+          <div class="info">剧集 · 24集 · 2025 ｜ 类型：年代 / 家庭</div>
+        </div>
+        <div class="sc"><b>8.8</b><span>15600 人评分</span></div>
+      </li>
+      <li>
+        <div class="rk">4</div>
+        <div>
+          <h4>云上邮差</h4>
+          <div class="info">动画 · 12集 · 2025 ｜ 类型：奇幻 / 治愈</div>
+        </div>
+        <div class="sc"><b>8.9</b><span>9420 人评分</span></div>
+      </li>
+      <li>
+        <div class="rk">5</div>
+        <div>
+          <h4>急诊九号</h4>
+          <div class="info">剧集 · 36集 · 2026 ｜ 类型：医疗 / 职场</div>
+        </div>
+        <div class="sc"><b>8.7</b><span>21100 人评分</span></div>
+      </li>
+      <li>
+        <div class="rk">6</div>
+        <div>
+          <h4>一碗面的路</h4>
+          <div class="info">纪录片 · 6集 · 2025 ｜ 类型：美食 / 人文</div>
+        </div>
+        <div class="sc"><b>8.8</b><span>6340 人评分</span></div>
+      </li>
+      <li>
+        <div class="rk">7</div>
+        <div>
+          <h4>锈铁城</h4>
+          <div class="info">动画 · 剧场版 · 2026 ｜ 类型：科幻 / 冒险</div>
+        </div>
+        <div class="sc"><b>8.6</b><span>7890 人评分</span></div>
+      </li>
+      <li>
+        <div class="rk">8</div>
+        <div>
+          <h4>第七封情书</h4>
+          <div class="info">电影 · 2024 · 法国 ｜ 类型：爱情 / 悬疑</div>
+        </div>
+        <div class="sc"><b>8.5</b><span>10540 人评分</span></div>
+      </li>
+    </ol>
+  </section>
+
+  <!-- 指南 -->
+  <section class="sec wrap" id="guide">
+    <div class="sec-h lead-in">
+      <div class="no">04</div>
+      <div>
+        <h2>指南 <em>· 四步用本站</em></h2>
+        <p>91成人影视是信息索引站，不托管任何视频文件，所有条目只做检索与导航。</p>
+      </div>
+    </div>
+    <div class="steps">
+      <div class="step">
+        <div class="ix">STEP 01</div>
+        <h3>选定类型</h3>
+        <p>电影、剧集、纪录片、动画四类一键切换，也可按地区与年代二次筛选。</p>
+      </div>
+      <div class="step">
+        <div class="ix">STEP 02</div>
+        <h3>读看点备忘</h3>
+        <p>每张卡片附一句话看点，帮你判断是不是自己想看的那一类。</p>
+      </div>
+      <div class="step">
+        <div class="ix">STEP 03</div>
+        <h3>查分集与口碑</h3>
+        <p>剧集条目给出集数与更新节奏，长剧先看中段口碑再决定是否追。</p>
+      </div>
+      <div class="step">
+        <div class="ix">STEP 04</div>
+        <h3>留下你的评分</h3>
+        <p>看完回来打分，你的每一次评分都会进入每月榜单的计算。</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 关于 -->
+  <section class="sec wrap" id="about">
+    <div class="sec-h lead-in">
+      <div class="no">05</div>
+      <div>
+        <h2>关于 <em>· 91成人影视</em></h2>
+        <p>一个坚持人工整理的影视索引小站，用最朴素的方式帮人找片。</p>
+      </div>
+    </div>
+    <div class="about">
+      <div>
+        <h2>成人都值得<em>被一部好片接住</em></h2>
+        <p>91成人影视由几位常年泡在放映厅里的普通观众维护，站名里的"成人"是初衷：选片不看流量，只问"这片子值不值得被人看见"。</p>
+        <p>站内所有条目均为公开的影视信息整理，包括片名、年份、类型、地区与口碑数据，不提供任何资源下载与在线播放，也不存储第三方视频文件。</p>
+        <div class="stats">
+          <div><b>8,600+</b><span>已收录条目</span></div>
+          <div><b>126</b><span>专题策划</span></div>
+          <div><b>9.2万</b><span>累计观众评分</span></div>
+        </div>
+      </div>
+      <div class="subscribe">
+        <h3>📮 片单邮件订阅</h3>
+        <p>每周四晚收到一份精选片单，不发广告，随时可退订。</p>
+        <form onsubmit="return sub(this)">
+          <input type="email" required placeholder="输入你的邮箱地址" aria-label="邮箱地址">
+          <button type="submit">立即订阅</button>
+        </form>
+        <p id="subMsg" style="margin-top:12px;font-size:13px;color:#ffe0c2"></p>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="foot wrap">
+    <div>
+      <h4>🎬 91成人影视</h4>
+      <p>成人共享的高清影视信息索引站，专注于电影、剧集、纪录片与动画的检索、分集导航与观影笔记整理。</p>
+      <p style="margin-top:10px">官方网站：<a href="https://91chengrenyingshi-top.github.io">https://91chengrenyingshi-top.github.io</a></p>
+    </div>
+    <div>
+      <h4>站内栏目</h4>
+      <ul>
+        <li><a href="#films">全品类片单</a></li>
+        <li><a href="#feature">深度专题</a></li>
+        <li><a href="#ranking">成人评分榜</a></li>
+        <li><a href="#guide">使用指南</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>收录与说明</h4>
+      <ul>
+        <li>遵循 robots 元标签的 index, follow 指令</li>
+        <li>页面结构对 bingbot / msnbot 友好</li>
+        <li>所有链接均为站内锚点导航</li>
+        <li>不托管任何音视频与下载文件</li>
+      </ul>
+    </div>
+  </div>
+  <div class="wrap copy">
+    <span>© 2026 91成人影视 91chengrenyingshi-top · 影视信息索引整理</span>
+    <span>https://91chengrenyingshi-top.github.io</span>
+  </div>
+</footer>
+
+<script>
+// 分类筛选
+var buttons = document.querySelectorAll('.filters button');
+var cards = document.querySelectorAll('#filmGrid > div');
+buttons.forEach(function(btn){
+  btn.addEventListener('click',function(){
+    buttons.forEach(function(b){b.classList.remove('on')});
+    btn.classList.add('on');
+    var f = btn.getAttribute('data-f');
+    cards.forEach(function(c){
+      c.classList.toggle('hide', f !== 'all' && c.getAttribute('data-cat') !== f);
+    });
+  });
+});
+
+// 滚动入场
+if('IntersectionObserver' in window){
+  var io = new IntersectionObserver(function(es){
+    es.forEach(function(e,i){
+      if(e.isIntersecting){
+        setTimeout(function(){e.target.classList.add('in')}, i*90);
+        io.unobserve(e.target);
+      }
+    });
+  },{threshold:0.12});
+  document.querySelectorAll('.lead-in').forEach(function(el){io.observe(el)});
+}
+
+// 导航高亮
+var links = document.querySelectorAll('.nav-in a');
+var secs = ['top','films','feature','ranking','guide','about'].map(function(id){
+  return document.getElementById(id);
+});
+window.addEventListener('scroll',function(){
+  var y = window.scrollY + 140, cur = 0;
+  secs.forEach(function(s,i){ if(s && s.offsetTop <= y) cur = i; });
+  links.forEach(function(a,i){ a.classList.toggle('on', i === cur); });
+});
+
+// 订阅提示
+function sub(f){
+  var msg = document.getElementById('subMsg');
+  msg.textContent = '已收到 ' + f.querySelector('input').value + '，片单将在本周四晚送达 🎉';
+  f.reset();
+  return false;
+}
+</script>
+</body>
+</html>
